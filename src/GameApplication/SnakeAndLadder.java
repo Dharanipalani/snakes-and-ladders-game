@@ -57,6 +57,8 @@ public class SnakeAndLadder extends JFrame {
 	final static Color snakehead = Color.DARK_GRAY, snaketail = Color.CYAN,
 			ladderstart = Color.MAGENTA, ladderend = Color.PINK;
 	static Color oddCell = Color.GREEN, evenCell = Color.BLUE;
+	private JMenu mnAboutMe;
+	private JMenuItem mntmNewMenuItem;
 
 	/**
 	 * Launch the application.
@@ -127,6 +129,18 @@ public class SnakeAndLadder extends JFrame {
 			}
 		});
 		mnNewMenu_1.add(mntmInstructions);
+		
+		mnAboutMe = new JMenu("About");
+		menuBar.add(mnAboutMe);
+		
+		mntmNewMenuItem = new JMenuItem("About Me");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				AboutMe obj = new AboutMe();
+				obj.setVisible(true);
+			}
+		});
+		mnAboutMe.add(mntmNewMenuItem);
 				
 		gridPanel = new GridPanel(dimension);
 		gridPanel.setBounds(0, 0, 508, 551);
